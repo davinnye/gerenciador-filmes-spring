@@ -1,5 +1,7 @@
 package com.davinnye.gerenciadorfilmesspring.entitites;
 
+import com.davinnye.gerenciadorfilmesspring.dtos.ActorDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -40,6 +42,10 @@ public class Actor {
 
     public void setId (Long id){
         this.id = id;
+    }
+
+    public Actor(ActorDto actor){
+        this.name = actor.getName();
     }
 
 
