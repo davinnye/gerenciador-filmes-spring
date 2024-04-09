@@ -1,5 +1,7 @@
 package com.davinnye.gerenciadorfilmesspring.entitites;
 
+import com.davinnye.gerenciadorfilmesspring.dtos.DirectorDto;
+
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -33,6 +35,10 @@ public class Director {
         super();
         this.id = id;
         this.name = name;
+    }
+
+    public Director(DirectorDto director) {
+        this.name = director.getName();
     }
 
     public Long getId(){
