@@ -1,5 +1,6 @@
 package com.davinnye.gerenciadorfilmesspring.entitites;
 
+import java.util.HashSet;
 import java.util.Set;
 
 import jakarta.persistence.Entity;
@@ -37,6 +38,10 @@ public class Movie {
         this.director = director;
         this.cast = cast;
         this.reception = reception;
+    }
+
+    public Movie(String name2, Director existingDirector, HashSet<Actor> cast2, float reception2) {
+        //TODO Auto-generated constructor stub
     }
 
     public Long getId() {
