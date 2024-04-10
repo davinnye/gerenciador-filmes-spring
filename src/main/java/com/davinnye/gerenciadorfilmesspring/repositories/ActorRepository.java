@@ -12,4 +12,6 @@ public interface ActorRepository extends JpaRepository<Actor, Long>{
 
     public List<Actor> findByOrderByNameAsc();
 
+    public Actor getReferenceByName(String name);
+
 }

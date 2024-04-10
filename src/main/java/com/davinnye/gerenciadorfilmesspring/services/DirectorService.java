@@ -28,6 +28,13 @@ public class DirectorService {
     }
 
     @Transactional(readOnly = true)
+    public Director findDirectorByName(String name){
+        Director d = dr.getReferenceByName(name);
+
+        return d;
+    }
+
+    @Transactional(readOnly = true)
     public List<DirectorDto> directorsList(){
         
         List<Director> savedDirectors = this.dr.findByOrderByNameAsc();

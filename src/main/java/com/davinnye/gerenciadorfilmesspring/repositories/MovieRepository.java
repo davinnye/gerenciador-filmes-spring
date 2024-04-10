@@ -15,6 +15,6 @@ public interface MovieRepository extends JpaRepository<Movie, Long>{
     public List<Movie> findByDirectorOrderByNameAsc(Director director);
     public List<Movie> findByReceptionGreaterThanEqualOrderByName(Float reception);
     @Query(value="select * from cf_movie as u inner join cf_movie_cast as e on e.movie_id=u.id WHERE cast_id=:id order by name", nativeQuery=true)
-    public List<Movie> findByActorOderByName(Long id);    
+    public List<Movie> findByActorOrderByName(Long id);    
 
 }
