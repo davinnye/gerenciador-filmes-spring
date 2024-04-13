@@ -3,6 +3,7 @@ package com.davinnye.gerenciadorfilmesspring.entitites;
 import java.util.HashSet;
 import java.util.Set;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
@@ -21,9 +22,9 @@ public class Movie {
     private Long id;
     
     private String name;
-    @ManyToOne
+    @ManyToOne(cascade = CascadeType.PERSIST)
     private Director director;
-    @ManyToMany
+    @ManyToMany(cascade = CascadeType.PERSIST)
     private Set<Actor> cast;
     private Float reception;
     
@@ -41,7 +42,6 @@ public class Movie {
     }
 
     public Movie(String name2, Director existingDirector, HashSet<Actor> cast2, float reception2) {
-        //TODO Auto-generated constructor stub
     }
 
     public Long getId() {

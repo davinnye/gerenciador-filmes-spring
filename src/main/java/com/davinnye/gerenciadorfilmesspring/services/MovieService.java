@@ -77,7 +77,7 @@ public class MovieService {
     } 
 
     @Transactional(readOnly = true)
-    public List<MovieDto> listMoviesOrderedByDirector (DirectorDto director){
+    public List<MovieDto> listMoviesByDirector (DirectorDto director){
         Director savedDirector = dr.getReferenceByName(director.getName());
 
         if(savedDirector == null){
